@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -10,5 +9,6 @@ use App\Models\Book;
 use App\Models\Category;
 class BookController extends Controller
 {
-    Test github hihi
+    
 }
+?>
