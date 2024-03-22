@@ -11,4 +11,9 @@ class ViDuController extends Controller
     {
         return view("vidu1");
     }
+
+    function pgnhann()
+    {
+        echo "Test koi có bị conflict hok";
+    }
 }
