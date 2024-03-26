@@ -15,5 +15,6 @@ class ViDuController extends Controller
     function pgnhann()
     {
         echo "Test koi có bị conflict hok";
+        echo "Hok conflict nha";
     }
 }

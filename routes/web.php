@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Product2Controller;
+use App\Http\Controllers\Promotion2Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +25,10 @@ Route::get("/qlsach/thongtinsach","App\Http\Controllers\BookController@laythongt
 
 Route::get("/pgnhann","App\Http\Controllers\BookController@pgnhann");
 
+Route::get("/san-pham", [
+    Product2Controller::class,"index"
+]);
+
+Route::get("/khuyen-mai/insert", [
+    Promotion2Controller::class,"insertdata"
+]);
