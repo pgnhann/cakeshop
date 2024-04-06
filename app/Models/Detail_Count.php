@@ -4,12 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-class Book extends Model
+use Illuminate\Http\Request;
+class Detail_Count extends Model
 {
     use HasFactory;
-    
-    protected $table = "sach";
-    protected $primaryKey = "id";
+    protected $table = 'detail_count';
     public $timestamps = false;
+    protected $fillable=[
+        'count'
+    ];
+   
 }
+

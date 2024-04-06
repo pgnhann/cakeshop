@@ -15,7 +15,8 @@ class Product extends Model
         'Pd_Name',
         'Pd_Material',
         'Pd_Price',
-        'Pd_Sold'
+        'Pd_Sold',
+        'Pd_Image'
     ];
    
 }

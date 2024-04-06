@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Promotion extends Model
 {
     use HasFactory;
-    protected $table = 'promotion';
+    protected $table = 'voucher';
     protected $fillable=[
         'Prm_Id',
         'Prm_Name',
