@@ -154,7 +154,7 @@ class OrderController extends Controller
                     'errors' => $validator->errors(),
                 ], 422);
             }
-            if ($request->payment_list[0]['payment_code'] === 'cash') {
+            if ($request->payment_list[0]['payment_code'] == 'cash') {
     
                 $count = Count::first()->count;
                 $order_id="Od".(string)$count;
