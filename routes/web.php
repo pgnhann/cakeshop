@@ -25,6 +25,8 @@ Route::get("/qlsach/thongtinsach","App\Http\Controllers\BookController@laythongt
 
 Route::get("/pgnhann","App\Http\Controllers\BookController@pgnhann");
 
+// Route::get("/test","App\Http\Controllers\Controller@test");
+
 Route::get("/san-pham", [
     Product2Controller::class,"index"
 ]);
@@ -32,3 +34,4 @@ Route::get("/san-pham", [
 Route::get("/khuyen-mai/insert", [
     Promotion2Controller::class,"insertdata"
 ]);
+

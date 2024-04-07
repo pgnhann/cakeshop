@@ -12,7 +12,7 @@ use App\Models\Detail_Count;
 use Exception;
 
 
-use Barryvdh\DomPDF\Facade\Pdf as PDF;
+// use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Support\Facades\Validator;
 class OrderController extends Controller
 {
