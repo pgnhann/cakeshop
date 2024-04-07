@@ -1,0 +1,335 @@
+
+/*================TABLE-QUANLYLOAIBANH==============*/
+.wrap-after-dot {
+    white-space: pre-wrap; 
+}
+
+.wrap-after-dot::after {
+    content: "\A"; 
+    white-space: pre; 
+}
+
+/*==================TABLE-ADD-LOAIBANH================*/
+.addtype-table
+{
+    margin-top: 10px;
+    width: 80%;
+}
+
+.label-addtype
+{
+    width: 25%;
+    font-size: 18px;
+    text-align: left; 
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+.addtype-table input 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.addtype-table input[readonly]
+{
+    background: #f2f2f2fb;
+}
+
+.addtype-table textarea 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 170px; 
+    color: black;
+    border: 1px solid #ccc;
+    padding-left: 10px; 
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.addtype-table input:hover
+{
+    border-color: #395542;
+}
+
+.addtype-table textarea:hover
+{
+    border-color: #395542;
+}
+
+.type-button-container 
+{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 940px;
+}
+
+.type-button-container input
+{
+    margin-right: 10px;
+}
+
+/*======================TABLE-UPDATE-LOAIBANH=================*/
+
+.updatetype-table
+{
+    margin-top: 10px;
+    width: 80%;
+}
+
+.label-updatetype
+{
+    width: 22%;
+    font-size: 17px;
+    text-align: left; 
+    padding-left: 15px;
+}
+
+.updatetype-table input {
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px; 
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    margin-bottom: 12px;
+}
+
+.updatetype-table input:hover
+{
+    border-color: #395542;
+}
+
+.updatetype-table textarea 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 180px; 
+    color: black;
+    border: 1px solid #ccc;
+    padding-left: 10px; 
+    padding-top: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.updatetype-table textarea:hover
+{
+    border-color: #395542;
+}
+
+.decor-bonus 
+{
+    padding-top: 25px !important;
+}
+
+.decor-instru
+{
+    padding-top: 22px !important;
+}
+
+/*==================TABLE-QUANLYSANPHAM================*/
+.dropdown-menu
+{
+    position: absolute !important;
+    left: -120px !important;
+}
+
+/*==============TABLE-ADD-PRODUCT============*/
+.addpro-table
+{
+    margin-top: 10px;
+    width: 80%;
+}
+
+.label-addpro
+{
+    width: 200px;
+    font-size: 17px;
+    text-align: left; 
+    padding-left: 40px;
+    padding-bottom: 8px;
+}
+
+select[name="typepro"]
+{
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding-left: 6px;
+}
+
+select[name="typepro"]:hover
+{
+    border-color: #395542;
+}
+
+.addpro-table input 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.addpro-table input[readonly]
+{
+    background: #f2f2f2fb;
+}
+
+.addpro-table input:hover
+{
+    border-color: #395542;
+}
+.uploadimg-container {
+    display: flex; 
+    align-items: center; 
+    margin-top: 10px;
+}
+
+.uploadimg-container img 
+{
+    width: 180px;
+    height: 180px;
+    margin-right: 15px;
+}
+
+.addpro-table input[type="file"] 
+{
+    background: #fff;
+    padding-top: 10px;
+    padding-left: 0px;
+    border-color: #fff;
+    flex: 1;
+}
+
+.pro-button-container 
+{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 960px;
+}
+
+.pro-button-container input 
+{
+    margin-right: 10px; 
+}
+
+.agree-button
+{
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    background: #579b6d;
+    color: white;
+    font-size: 17px;
+    transition: all ease 0.3s;
+}
+.agree-button:hover
+{
+    background: #6abe84;
+}
+
+.cancel-button
+{
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    background: #9b5757;
+    color: white;
+    font-size: 17px;
+    transition: all ease 0.3s;
+}
+.cancel-button:hover
+{
+    background: #be6a6a;
+}
+
+/*==============UPDATE-PRODUCT==============*/
+.updatepro-table
+{
+    margin-top: 10px;
+    width: 80%;
+}
+
+.label-updatepro
+{
+    width: 20%;
+    font-size: 18px;
+    text-align: left; 
+    padding-left: 40px;
+    padding-bottom: 10px;
+}
+
+.updatepro-table input 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.updatepro-table input:hover
+{
+    border-color: #395542;
+}
+
+.updateimg-container {
+    display: flex; 
+    align-items: center; 
+    margin-top: 10px;
+}
+
+.updateimg-container img 
+{
+    width: 180px;
+    height: 180px;
+}
+
+.updateimg-container input[type="file"]
+{
+    flex: 1;
+    background: #fff;
+    padding-top: 12px;
+    margin-left: 10px;
+    border-color: #fff;
+}
+
+#old-image {
+    display: none;
+}
+.updatepro-button
+{
+    margin-top: 20px;
+    margin-left: 1150px;
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    background: #579b6d;
+    color: white;
+    font-size: 17px;
+    transition: all ease 0.3s;
+}
+.updatepro-button:hover
+{
+    background: #6abe84;
+}

@@ -1,0 +1,248 @@
+/* Import Google Font CDN */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    /* font-family: Nunito, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+}
+body
+{
+    display: flex;
+    background: #ebe9e9 !important;
+}
+
+a
+{
+    text-decoration: none !important;
+}
+
+/*===============MENU============*/
+
+.slidebar
+{
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    height: 100vh;
+    padding: 0 1.8rem;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background: #395542;
+}
+.slidebar:hover
+{
+    width: 250px;
+    transition: 0.5s;
+}
+.logo
+{
+    height: 80px;
+    padding: 10px;
+}
+.menu
+{
+    height: 80%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li 
+{
+    padding: 1rem;
+    border-radius: 6px;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu li.active-menu {
+    background-color: #56735f;
+}
+
+.menu li:hover
+{
+    background: #56735f;
+}
+
+.menu a
+{
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu li a:hover 
+{
+    color: #fff !important;
+}
+
+.menu a span
+{
+    overflow: hidden;
+}
+.menu a i
+{
+    font-size: 1.2rem;
+}
+
+.logout
+{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+}
+
+/*==============HEADER============*/
+
+.main-content
+{
+    margin-left: 15px;
+    position: relative;
+    background: #ebe9e9;
+    width: 100%;
+}
+
+.header-container
+{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+     background: #fff;
+     border-radius: 8px;
+     padding: 10px 2rem;
+     margin-bottom: 1rem;
+     margin-top: 1rem;
+     margin-right: 1rem;
+}
+.header-title
+{
+    color: #395542;
+}
+
+.header-title h2 
+{
+    font-size: 22px !important;
+    font-weight: bold !important;
+}
+.user-info
+{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.search-box
+{
+    width: 400px;
+    height: 40px;
+    background: #d2d8d384 ;
+    border-radius: 10px;
+    color: #395542;
+    display: flex;
+    gap: 5px;
+    padding: 3px 12px;
+    align-items: center;
+    margin-right: 6px;
+}
+.search-box input
+{
+    background: transparent;
+    padding: 5px;
+}
+.search-box i 
+{
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.search-box i:hover
+{
+    transform: scale(1.2);
+}
+
+.setting-user
+{
+    background: #fff;
+    position: relative;
+}
+.setting-user:hover
+{
+    color: #56735f;
+}
+.setting-user span
+{
+    font-size: 16px;
+}
+.setting-user i
+{
+    font-size: 13px;
+}
+
+.setting-dropdown {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    text-align: left;
+    width: 180px;
+    height: 77px;
+    top: 30px;
+    left: -120px;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(88, 88, 88, 0.2);
+    border-radius: 5px;
+}
+
+.setting-dropdown a
+{
+    color: black;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.setting-user.clicked .setting-dropdown {
+    display: block;
+}
+
+.setting-option a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #000;
+}
+
+.setting-option a:hover {
+    background-color: #f9f7f7;
+    border-radius: 5px;
+    color: black;
+}
+
+.setting-table
+{
+    margin-top: 10px;
+    width: 85%;
+    margin-left: 80px;
+}
+
+.setting-button-container
+{
+    margin-left: 870px;
+    margin-top: 20px;
+}
+.form-label
+{
+    font-weight: bold;
+    font-size: 18px;
+}
+.form-control
+{
+    font-size: 17px !important;
+}
