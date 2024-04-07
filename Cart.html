@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Atelier Cake</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid top-bar bg-dark text-light px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 align-items-center d-none d-lg-flex">
+            <div class="col-lg-6 px-5 text-start">
+                    <small>Theo dõi Atelier Cake tại:</small>
+                    <div class="h-100 d-inline-flex align-items-center">
+                        <a class="btn-lg-square text-green border-end rounded-0 " href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn-lg-square text-green pe-0" href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    </div>
+            </div>
+            <div class="col-lg-6 px-5 text-end">
+                <div class="ps-3 h-auto margin-right">
+                    <a class="d-inline-flex"><i class="fa fa-phone text-green"></i></a>
+                    <small class="text-green mb-0">Liên hệ chúng tôi:</small>
+                    <a class="text-light">0905.666.888</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="text-green m-0">Atelier Cake</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link ">Trang Chủ</a>
+                <a href="Promotion.html" class="nav-item nav-link">Khuyến mãi</a>
+                <a href="about.html" class="nav-item nav-link">Giới thiệu</a>
+                <a href="blog.html" class="nav-item nav-link">Blog</a>
+                <div class="nav-item dropdown">
+                    <a href="product.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sản phẩm</a>
+                    <div class="dropdown-menu m-0">
+                      <a href="Entremet.html" class="dropdown-item">Bánh Entremet</a>
+                        <a href="Tiramisu.html" class="dropdown-item">Bánh Tiramisu</a>
+                        <a href="Kem.html" class="dropdown-item">Bánh kem</a>
+                        <a href="ngot.html" class="dropdown-item">Bánh ngọt</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center">
+                <a class="btn-lg-square text-green border-end rounded-0 pe-0 " href="Cart.html"><i class="fa fa-cart-plus"></i></a>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center">
+            <a href="#!" class=" btn-login-square H-100 d-inline-flex btn btn-green btn-rounded text-uppercase font-weight-bold" 
+            href="Dang-nhap.html">Đăng nhập</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center pt-5 pb-3">
+            <h1 class="display-4 text-white animated slideInDown mb-3">Giỏ hàng</h1>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Cart Start -->
+    <div class="wrapCont">
+      <div class="wrapper">
+        <div class="style_step"><ul><li class="active">
+                        <span class="number">1</span>
+                        <span class="text">Giỏ hàng</span>
+                      </li><li>
+                          <span class="number">2</span>
+                          <span class="text">Thông tin đơn hàng</span>
+                        </li><li>
+                          <span class="number">3</span>
+                          <span class="text">Hoàn tất</span>
+                        </li></ul></div>
+        
+        <form id="step1" action="#" method="post" name="f_cart">
+      <div id="tableCart">
+        <table>
+          <thead>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Đơn giá</th>
+              <th>Số lượng</th>
+              <th>Tổng cộng</th>
+              <th></th>
+              <th>Xóa</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>
+                <div class="img"><img src="img/Matcha/Tiramisu truyền thống.jpg" alt="Tiramisu Truyền thống"></div>
+                <div class="tend"><h3>Tiramisu Truyền thống</h3></div>
+                <div class="clear"></div>
+              </td>
+              <td data-cont="Đơn giá"><div class="price-simple">0 vnđ</div></td>
+              <td>
+                <div class="quantity">
+                  <button type="button" class="btn-down" onclick="vnTShopping.changeQuantity('quantity_57004','decrease',57004);"><i class="fa fa-minus"></i></button>
+                  <input type="text" id="quantity_57004" name="quantity[57004]" value="2" onchange="vnTShopping.updateQuantity(57004)" class="quantity">
+                  <button type="button" class="btn-up" onclick="vnTShopping.changeQuantity('quantity_57004','increase',57004);"><i class="fa fa-plus"></i></button>
+                  <div class="clear"></div>
+                </div>
+              </td>
+              <td data-cont="Tổng cộng">
+                <div class="price-total" id="ext_total_57004">0 vnđ</div>
+              </td>
+              <td>
+                
+              </td>
+              <td><a class="del" href="#"><i class="fa fa-times"></i></a></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="tableTools">
+        <div class="formCounpon">
+          <div class="txt">Coupon giảm giá</div>
+          <div class="form">
+            <input type="text" name="promotion_code" id="promotion_code" value="" placeholder="Nhập mã khuyến mãi nếu có">
+            <button type="submit" id="btn_PromotionCode" name="btn_PromotionCode" value="1">Dùng</button>
+          </div>
+        </div>
+        <div class="totalPrice">
+          <ul>
+            <li>
+              <div class="at">Thành tiền</div>
+              <div class="as" id="ext_cart_total">0 vnđ</div>
+              <div class="clear"></div>
+            </li>
+            <li>
+              <div class="at">Giảm giá</div>
+              <div class="as" id="ext_discount">- 0 vnđ</div>
+              <div class="clear"></div>
+            </li>
+            <li class="bt">
+              <div class="at">Tổng đơn hàng</div>
+              <div class="as" id="ext_total_price">0 vnđ</div>
+              <div class="clear"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tableButton">
+        <div class="fr">
+          <button type="submit" id="btnCheckout" name="btnCheckout" value="1" class="btnCart gold">
+            Tiến hành đặt hàng
+          </button>
+        </div>
+        <div class="fl">
+          <a class="btnCart" href="#">Tiếp tục mua hàng</a>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="noteCart">Lưu ý: Tổng giá trị đơn hàng chưa bao gồm phí giao hàng. Nhân viên sẽ báo phí giao khi liên hệ xác nhận.</div>
+    </form>
+    <script language="javascript">
+      function checkform(f) {
+        var _success = 0;
+        $.ajax({
+          async    : false,
+          dataType : 'json',
+          url      : ROOT_MOD+"/ajax/check_order.html" ,
+          type     : 'POST',
+          success: function(data){
+            _success = data.success;
+            if( _success==0 ){
+              $.fancybox.open({
+                src       : ROOT_MOD+'/ajax/error_order.html',
+                type      : 'ajax',
+                baseClass : 'designPopup',
+              });
+            }
+          }
+        });
+        // return false;
+        return (_success==1) ? true : false;
+      }
+      $(function(){
+        $("#step1").submit(function(){
+          return checkform( $(this)[0] );
+        });
+      });
+    </script>
+      </div>
+    </div>
+    <!-- Login End -->
+
+    <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer my-6 mb-0 py-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">Thông tin liên hệ</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>CN1: 244 Pasteur, phường 6, quận 3, TP.HCM</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>CN2: 18 Thảo Điền, phường Thảo Điền, TP. Thủ Đức, TP.HCM</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0905.666.888</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>Atelier.cake@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">CÔNG TY CỔ PHẦN BÁNH NGỌT ATELIER CAKE</h4>
+                        <p>Địa chỉ tên miền: AtelierCake.vn
+                        <br>Tên Doanh nghiệp: Công ty Cổ phần Bánh ngọt Atelier Cake
+                        <br>MST/ĐKKD/QLTL: 0104802706
+                        <br>Trụ sở Doanh Nghiệp:Số 244 Pasteur, phường 6, quận 3, TP.HCM
+                        <br>Quốc gia: Việt Nam
+                        <br>Điện thoại: 0905.666.888
+                        <br>Ngày cấp: 21/04/2023
+                        <br>Nơi cấp: Sở Kế hoạch và Đầu tư Tp. Hồ Chí Minh</p>
+                        <img class="img-fluid" src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/42008041469/original/Mo9gDy2XMZLppkUw4sWCsYV-lk65HqqgQw.gif?1539077990" alt="">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+    
+    
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">AtelierCake</a>, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-green btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
