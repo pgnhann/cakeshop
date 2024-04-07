@@ -31,18 +31,21 @@
             width:10%;
         }
     </style>
-    <br>
+    
     <h1 style="text-align: center;">Đơn hàng</h1>
     <table>
         <thread>
             <tr>
                 <th>Order  Id</th>
                 <th>Cus  Phone</th>
+                <th>Cus Name</th>
                 <th>Staff Id</th>
-                <th>Promte Id</th>
-                <th>Prm Disc</th>
+                <th>Recipient Name</th>
+                <th>Recipient Phone</th>
                 <th>Total</th>
-                
+                <th>Create Date</th>
+                <th>Is Paid</th>
+                <th>Is Delivered</th>
             </tr>
         </thread>
         <tbody>
@@ -50,11 +53,14 @@
                 <tr>
                     <td>{{ $combined_order['order']->Order_Id  }}</td> 
                     <td>{{ $combined_order['order']->Cus_Phone }}</td>
+                    <td>{{ $combined_order['order']->Cus_Name }}</td>
                     <td>{{ $combined_order['order']->Staff_Id }}</td>
-                    <td>{{ $combined_order['order']->Prm_Id }}</td>
-                    <td>{{ $combined_order['order']->Prm_Disc }}</td>
+                    <td>{{ $combined_order['order']->Recipient_Name }}</td>
+                    <td>{{ $combined_order['order']->Recipient_Phone }}</td>
                     <td>{{ $combined_order['order']->Total }}</td>
-                    
+                    <td>{{ $combined_order['order']->Create_Date }}</td>
+                    <td>{{ $combined_order['order']->Is_Paid }}</td>
+                    <td>{{ $combined_order['order']->Is_Delivered }}</td>
                 </tr>
             @endforeach
         </tbody>

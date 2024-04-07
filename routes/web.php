@@ -19,16 +19,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/vidu1","App\Http\Controllers\ViDuController@vidu");
-Route::get("/qlsach/theloai","App\Http\Controllers\BookController@laythongtintheloai");
-Route::get("/qlsach/thongtinsach","App\Http\Controllers\BookController@laythongtinsach");
+// Route::get("/vidu1","App\Http\Controllers\ViDuController@vidu");
+// Route::get("/qlsach/theloai","App\Http\Controllers\BookController@laythongtintheloai");
+// Route::get("/qlsach/thongtinsach","App\Http\Controllers\BookController@laythongtinsach");
 
-Route::get("/pgnhann","App\Http\Controllers\BookController@pgnhann");
+// Route::get("/pgnhann","App\Http\Controllers\BookController@pgnhann");
 
-Route::get("/san-pham", [
-    Product2Controller::class,"index"
-]);
+// Route::get("/san-pham", [
+//     Product2Controller::class,"index"
+// ]);
 
-Route::get("/khuyen-mai/insert", [
-    Promotion2Controller::class,"insertdata"
-]);
+// Route::get("/khuyen-mai/insert", [
+//     Promotion2Controller::class,"insertdata"
+// ]);

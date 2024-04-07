@@ -10,7 +10,8 @@ use App\Models\Order_Detail;
 use App\Models\Count;
 use App\Models\Detail_Count;
 use Exception;
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\PHPMailerException;
 
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Support\Facades\Validator;
@@ -45,17 +46,20 @@ class OrderController extends Controller
         if(isset($filters['Payment_Code'])){
             $query->where('Payment_Code',$filters['Payment_Code']);
         }
-        if(isset($filters['status'])){
-            $query->where('status',$filters['status']);
-        }
         if(isset($filters['React'])){
             $query->where('React',$filters['React']);
         }
-        if(isset($filters['Promote'])){
-            if($filters['Promote']="Yes"){
-                $query->whereNotNull('Prm_Id');
-            }
-            else $query->whereNull('Prm_Id');
+        if(isset($filters['Is_Paid'])){
+            $query->where('Is_Paid',$filters['Is_Paid']);
+        }
+        if(isset($filters['Is_Delivered'])){
+            $query->where('Is_Delivered',$filters['Is_Delivered']);
+        }
+        if(isset($filters['Recipient_Province_City'])){
+            $query->where('Recipient_Province_City',$filters['Recipient_Province_City']);
+        }
+        if(isset($filters['Recipient_District'])){
+            $query->where('Recipient_District',$filters['Recipient_District']);
         }
         $orders = $query->get();
         $detailed_orders = [];
@@ -154,55 +158,62 @@ class OrderController extends Controller
                     'errors' => $validator->errors(),
                 ], 422);
             }
-            if ($request->payment_list[0]['payment_code'] == 'cash') {
+            if($request['delivery_date']>$request['created_date']){
+                if ($request->payment_list[0]['payment_code'] == 'cash') {
     
-                $count = Count::first()->count;
-                $order_id="Od".(string)$count;
-                $orderData = [
-                        'Order_Id' => $order_id,
-                        'Total'=>$request['payment_list.0.amount'],
-                        "Cus_Name"=>$request['customer_info.0.Cus_Name'],
-                        'Cus_Phone'=>$request['customer_info.0.Cus_Phone'],
-                        'Staff_Id'=>$request['Staff_Id'],
-                        'Recipient_Name'=>$request['customer_info.0.Recipient_Name'],
-                        'Recipient_Phone'=>$request['customer_info.0.Recipient_Phone'],
-                        'Recipient_Email'=>isset($request['customer_info.0.Recipient_Email']) ? $request['customer_info.0.Recipient_Email'] : null,
-                        'Recipient_Province_City'=>$request['customer_info.0.Recipient_Provice_City'],
-                        'Recipient_District'=>$request['customer_info.0.Recipient_District'],
-                        'Recipient_Ward'=>$request['customer_info.0.Recipient_Ward'],
-                        'Recipient_Address'=>$request['customer_info.0.Recipient_Address'],
-                        'Note'=>isset($request['customer_info.0.Note']) ? $request['customer_info.0.Note'] : null,
-                        'Create_Date'=>$request['created_date'],
-                        'Payment_Code'=>$request['payment_list.0.payment_code']
-                ];
-                Order1::Create($orderData);
-                foreach($request['order_items'] as $item){
-                    $detail_count = Detail_Count::first()->count;
-                    $Order_Detail_Id="O".(string)$detail_count;
-                    $order_detailData=[
-                        'Order_Detail_Id'=>$Order_Detail_Id,
-                        'Order_Id'=>$order_id,
-                        'Pd_Id'=>$item['Pd_Id'],
-                        'Quantity'=>$item['Quantity'],
-                        'Prm_Id'=>$item['Prm_Id'],
-                        'Prm_Disc'=>$item['Prm_Disc'],
-                        'Org_Price_P'=>$item['Org_Price_P'],
-                        'AfterPrm_Price_P'=>$item['AfterPrm_Price_P'],
-                        'AfterPrm_Total'=>$item['AfterPrm_Price_Total']
+                    $count = Count::first()->count;
+                    $order_id="Od".(string)$count;
+                    $orderData = [
+                            'Order_Id' => $order_id,
+                            'Total'=>$request['payment_list.0.amount'],
+                            "Cus_Name"=>$request['customer_info.0.Cus_Name'],
+                            'Cus_Phone'=>$request['customer_info.0.Cus_Phone'],
+                            'Staff_Id'=>$request['Staff_Id'],
+                            'Recipient_Name'=>$request['customer_info.0.Recipient_Name'],
+                            'Recipient_Phone'=>$request['customer_info.0.Recipient_Phone'],
+                            'Recipient_Email'=>isset($request['customer_info.0.Recipient_Email']) ? $request['customer_info.0.Recipient_Email'] : null,
+                            'Recipient_Province_City'=>$request['customer_info.0.Recipient_Provice_City'],
+                            'Recipient_District'=>$request['customer_info.0.Recipient_District'],
+                            'Recipient_Ward'=>$request['customer_info.0.Recipient_Ward'],
+                            'Recipient_Address'=>$request['customer_info.0.Recipient_Address'],
+                            'Note'=>isset($request['customer_info.0.Note']) ? $request['customer_info.0.Note'] : null,
+                            'Create_Date'=>$request['created_date'],
+                            'Payment_Code'=>$request['payment_list.0.payment_code']
                     ];
-                    $Pd_Name = Product::where('Pd_id','=',$item['Pd_Id'])->pluck('Pd_Name');
-                    $order_detailData['Pd_Name']=$Pd_Name;
-                    Order_Detail::create($order_detailData);
-                    Detail_Count::where('count','=',$detail_count)->delete();
-                    $detail_count_new=$detail_count+1;
-                    Detail_Count::create(['count' => $detail_count_new]);
+                    Order1::Create($orderData);
+                    foreach($request['order_items'] as $item){
+                        $detail_count = Detail_Count::first()->count;
+                        $Order_Detail_Id="O".(string)$detail_count;
+                        $order_detailData=[
+                            'Order_Detail_Id'=>$Order_Detail_Id,
+                            'Order_Id'=>$order_id,
+                            'Pd_Id'=>$item['Pd_Id'],
+                            'Quantity'=>$item['Quantity'],
+                            'Prm_Id'=>$item['Prm_Id'],
+                            'Prm_Disc'=>$item['Prm_Disc'],
+                            'Org_Price_P'=>$item['Org_Price_P'],
+                            'AfterPrm_Price_P'=>$item['AfterPrm_Price_P'],
+                            'AfterPrm_Total'=>$item['AfterPrm_Price_Total']
+                        ];
+                        $Pd_Name = Product::where('Pd_id','=',$item['Pd_Id'])->pluck('Pd_Name');
+                        $order_detailData['Pd_Name']=$Pd_Name;
+                        Order_Detail::create($order_detailData);
+                        Detail_Count::where('count','=',$detail_count)->delete();
+                        $detail_count_new=$detail_count+1;
+                        Detail_Count::create(['count' => $detail_count_new]);
+                    }
+                    Count::where('count','=',$count)->delete();
+                    $count++;
+                    Count::create(['count' => $count]);
+                    
                 }
-                Count::where('count','=',$count)->delete();
-                $count++;
-                Count::create(['count' => $count]);
-                
+                return response()->json(['success' => true, 'message' => 'Order created successfully!']);
             }
-            return response()->json(['success' => true, 'message' => 'Order created successfully!']);
+            else{
+                return response()->json([ 'message' => 'Ngày giao hàng phải >= ngày đặt hàng']);
+            }
+            
+            
         }
         catch (Exception $exception){
             return response()->json([
