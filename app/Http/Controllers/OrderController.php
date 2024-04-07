@@ -154,10 +154,10 @@ class OrderController extends Controller
                     'errors' => $validator->errors(),
                 ], 422);
             }
-            if ($request->payment_list[0]['payment_code'] == 'cash') {
+            if ($request->payment_list[0]['payment_code'] == 'Tiền mặt') {
     
                 $count = Count::first()->count;
-                $order_id="Od".(string)$count;
+                $order_id="O".(string)$count;
                 $orderData = [
                         'Order_Id' => $order_id,
                         'Total'=>$request['payment_list.0.amount'],
@@ -178,7 +178,7 @@ class OrderController extends Controller
                 Order1::Create($orderData);
                 foreach($request['order_items'] as $item){
                     $detail_count = Detail_Count::first()->count;
-                    $Order_Detail_Id="O".(string)$detail_count;
+                    $Order_Detail_Id="OD".(string)$detail_count;
                     $order_detailData=[
                         'Order_Detail_Id'=>$Order_Detail_Id,
                         'Order_Id'=>$order_id,
@@ -190,7 +190,7 @@ class OrderController extends Controller
                         'AfterPrm_Price_P'=>$item['AfterPrm_Price_P'],
                         'AfterPrm_Total'=>$item['AfterPrm_Price_Total']
                     ];
-                    $Pd_Name = Product::where('Pd_id','=',$item['Pd_Id'])->pluck('Pd_Name');
+                    $Pd_Name = Product::where('Pd_id','=',$item['Pd_Id'])->value('Pd_Name');
                     $order_detailData['Pd_Name']=$Pd_Name;
                     Order_Detail::create($order_detailData);
                     Detail_Count::where('count','=',$detail_count)->delete();
