@@ -76,6 +76,16 @@ Route::post('/quanly/sanpham/updated/{id}','App\Http\Controllers\admin\product@u
 Route::delete('/quanly/sanpham/delete/{id}','App\Http\Controllers\admin\product@delpro');
 
 
+//QUẢN LÝ ĐƠN HÀNG
+Route::get('/quanly/donhang','App\Http\Controllers\admin\order@mainorder') ->name('order.main');
+Route::get('/quanly/donhang/chitiet','App\Http\Controllers\admin\order@mainorder') ->name('order.viewdetail');
+
+Route::get('/quanly/donhang/update/{id}','App\Http\Controllers\admin\product@formupdateorder');
+Route::post('/quanly/donhang/updated/{id}','App\Http\Controllers\admin\product@updateorder');
+
+Route::delete('/quanly/donhang/delete/{id}','App\Http\Controllers\admin\product@delpro');
+
+
 ///QUẢN LÝ KHUYẾN MÃI
 Route::get('/quanly/khuyenmai','App\Http\Controllers\admin\others@mainprom')->name('promotion.main');
 
