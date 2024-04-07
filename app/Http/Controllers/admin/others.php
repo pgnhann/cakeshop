@@ -17,14 +17,13 @@ class others extends Controller
 
     function mainprom()
         {
-            $qlkm = DB::select("SELECT * FROM voucher");
-            return view('admin.others.mainprom',compact("qlkm"));
+            $prom = DB::select("SELECT * FROM voucher");
+            return view('admin.others.mainprom',compact("prom"));
         }
     
     function formaddprom()
         {
             $latestPromotion = DB::table('voucher')->orderBy('makm', 'desc')->first();
-            // Nếu có mã khuyến mãi mới nhất, tạo mã mới bằng cách tăng giá trị của phần số lên 1, nếu không có thì bắt đầu từ 1
             $nextPromotionNumber = $latestPromotion ? intval(substr($latestPromotion->makm, 2)) + 1 : 1;
             $nextPromotionID = "KM" . str_pad($nextPromotionNumber, 2, "0", STR_PAD_LEFT);
 
@@ -101,8 +100,8 @@ class others extends Controller
         
     function mainblog()
         {
-            $qlblog = DB::select("SELECT * FROM blog");
-            return view('admin.others.mainblog',compact("qlblog"));
+            $blog = DB::select("SELECT * FROM blog");
+            return view('admin.others.mainblog',compact("blog"));
         }
     
     function formaddblog()

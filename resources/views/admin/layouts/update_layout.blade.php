@@ -89,16 +89,7 @@
                         <span> Blog </span>
                     </a>
                 </li>
-
-                <!-- <li class="logout">
-                    <a href ="{{ route ('admin.logout') }}">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <span> Đăng xuất </span>
-                    </a>
-                </li> -->
-                
             </ul>
-
         </div>
         <!--==============MENU-END==============-->
 
@@ -135,15 +126,6 @@
          <!--============TABLE===========-->
         <div class="content-wrapper">
                 @yield('content')
-                <!--@if ($errors->any())
-                        <div class="error">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif-->
         </div>
     </div> <!-- End Main Content -->
     <script>

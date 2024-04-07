@@ -1,5 +1,5 @@
 
-/*================TABLE-QUANLYLOAIBANH==============*/
+/*================TABLE-MANAGE-TYPE==============*/
 .wrap-after-dot {
     white-space: pre-wrap; 
 }
@@ -9,7 +9,7 @@
     white-space: pre; 
 }
 
-/*==================TABLE-ADD-LOAIBANH================*/
+/*==================TABLE-ADD-TYPE================*/
 .addtype-table
 {
     margin-top: 10px;
@@ -77,7 +77,7 @@
     margin-right: 10px;
 }
 
-/*======================TABLE-UPDATE-LOAIBANH=================*/
+/*======================TABLE-UPDATE-TYPE=================*/
 
 .updatetype-table
 {
@@ -137,7 +137,7 @@
     padding-top: 22px !important;
 }
 
-/*==================TABLE-QUANLYSANPHAM================*/
+/*==================TABLE-MANAGE-PRODUCT================*/
 .dropdown-menu
 {
     position: absolute !important;
@@ -223,7 +223,7 @@ select[name="typepro"]:hover
 {
     display: flex;
     margin-top: 20px;
-    margin-left: 960px;
+    margin-left: 940px;
 }
 
 .pro-button-container input 

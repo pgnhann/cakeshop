@@ -31,8 +31,6 @@ require __DIR__.'/auth.php';
 
 Route::get('/quanly/trangchu','App\Http\Controllers\admin\main@index')->name('admin.index');
 
-//Route::get('/quanly/dangky','App\Http\Controllers\admin\main@signup');
-
 Route::get('/quanly/dangxuat','App\Http\Controllers\admin\main@logout')->name('admin.logout');
 
 Route::get('/quanly/caidat','App\Http\Controllers\admin\main@setting')->name('admin.setting');
@@ -41,7 +39,7 @@ Route::post('/quanly/caidat/capnhat','App\Http\Controllers\admin\main@saveinfo')
 
 //QUẢN LÝ TÀI KHOẢN
 Route::get('/quanly/taikhoan','App\Http\Controllers\admin\account@main')->name('account.main');
-Route::get('/quanly/ngdung','App\Http\Controllers\admin\account@user')->name('account.user');
+Route::get('/quanly/khachhang','App\Http\Controllers\admin\account@customer')->name('account.customer');
 
 Route::get('/quanly/nhvien/add','App\Http\Controllers\admin\account@formaddstaff')->name('account.add');
 Route::post('/quanly/nhvien/added','App\Http\Controllers\admin\account@addstaff')->name('account.added');

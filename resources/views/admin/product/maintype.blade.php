@@ -32,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($qllb as $row)
+                    @foreach($type as $row)
                     <tr>
                         <td width ="100px">{{$row->malb}}</td>
                         <td>{{$row->tenlb}}</td>

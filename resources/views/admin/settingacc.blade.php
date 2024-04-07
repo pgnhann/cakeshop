@@ -7,7 +7,7 @@
     @if ($errors->any())
     <div style='color:red;width:30%; margin:0 auto'>
         <div>
-            {{ __('Whoops! Something went wrong.') }}
+            {{ __('Có lỗi xảy ra!') }}
         </div>
         <ul>
             @foreach ($errors->all() as $error)
@@ -22,7 +22,7 @@
             <h5> CÀI ĐẶT TÀI KHOẢN </h5>
             <span>
                 <a href ="{{ route ('account.main') }}"> 
-                    <button class ="btn btn-viewuser"><i class="fa-solid fa-rotate-left"></i></button>
+                    <button class ="btn btn-viewcustomer"><i class="fa-solid fa-rotate-left"></i></button>
                 </a>
             </span>
         </div>
@@ -36,7 +36,7 @@
 
                     <div class="mb-3">
                         <label class="form-label">Mật khẩu</label>
-                        <input type="text" class ="form-control" name="pass" value="{{ Auth::user()->password }}">
+                        <input type="text" class ="form-control" name="pass" value="{{ Auth::user()->password_plain }}">
                     </div>
                     
                     <div class="mb-3">

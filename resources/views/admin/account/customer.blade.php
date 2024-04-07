@@ -8,9 +8,9 @@
         <div class = "card-header">
             <h5> XEM NGƯỜI DÙNG </h5>
             <div>
-                <b> Tổng số lượng: {{ count($qlnd) }} </b> &nbsp;
+                <b> Tổng số lượng: {{ count($customer) }} </b> &nbsp;
                 <a href ="{{ route ('account.main') }}">
-                    <button class = "btn btn-viewuser"> <i class="fa-solid fa-rotate-left"></i></button>
+                    <button class = "btn btn-viewcustomer"> <i class="fa-solid fa-rotate-left"></i></button>
                 </a>
             </div>
         </div>
@@ -30,17 +30,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($qlnd as $row)
+                    @foreach($customer as $row)
                     <tr>
                         <td>{{$row->phone}}</td>
-                        <td>{{$row->hoten}}</td>
-                        <td>{{$row->gioitinh}}</td>
-                        <td>{{$row->ngaysinh}}</td>
+                        <td>{{$row->name}}</td>
+                        <td>{{$row->sex}}</td>
+                        <td>{{$row->date}}</td>
                         <td>{{$row->email}}</td>
-                        <td>{{$row->diachi}}</td>
-                        <td>{{$row->quan}}</td>
-                        <td>{{$row->thpho}}</td>
-                        <td style = "border-right: none !important;">{{$row->tongdondadat}}</td>
+                        <td>{{$row->address}}</td>
+                        <td>{{$row->district}}</td>
+                        <td>{{$row->province_city}}</td>
+                        <td style = "border-right: none !important;">{{$row->total_order}}</td>
                     </tr>
                     @endforeach
                 </tbody>

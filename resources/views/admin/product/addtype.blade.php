@@ -8,7 +8,7 @@
         <h5> THÊM LOẠI BÁNH </h5>
         <span>
             <a href ="{{ route ('type.main') }}">
-                <button class = "btn btn-viewuser"> <i class="fa-solid fa-rotate-left"></i></button>
+                <button class = "btn btn-viewcustomer"> <i class="fa-solid fa-rotate-left"></i></button>
             </a>
         </span>
     </div>

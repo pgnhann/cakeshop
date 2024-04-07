@@ -16,8 +16,8 @@
                 <a href ="{{ route ('account.add') }}">
                     <button class = "btn btn-add" > <i class="fa-solid fa-user-plus"></i> </button>
                 </a>
-                <a href ="{{ route ('account.user') }}"> 
-                    <button class ="btn btn-viewuser"> <i class="fa-solid fa-eye"></i> </button>
+                <a href ="{{ route ('account.customer') }}"> 
+                    <button class ="btn btn-viewcustomer"> <i class="fa-solid fa-eye"></i> </button>
                 </a>
             </span>
         </div>
@@ -38,7 +38,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($qlnv as $key => $row)
+                    @foreach($admin as $key => $row)
                         <tr>
                             <td>{{$row->position}}</td>
                             <td>{{$row->phone}}</td>

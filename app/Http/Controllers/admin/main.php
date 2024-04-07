@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Session;
 
 class main extends Controller
@@ -17,78 +18,26 @@ function index()
         return view('admin.index');
     }
 
-// function login()
-//     {
-//         return view('admin.login');
-//     }
-
-// function checklogin(Request $request)
-//     {
-//         $sdt = $request->input('sdt');
-//         $pass = $request->input('pass');
-    
-//         if ($request->has('remember')) {
-//             session(['password' => $pass]);
-//         }
-
-//         //dd(session()->all());
-
-//         // Kiểm tra xem người dùng có tồn tại trong bảng login không
-//         $user = User::where('sdt', $sdt)->first();
-    
-//         if ($user) 
-//             {
-//                 if ($user->password == $pass) 
-//                 {
-//                     session(['username' => $user->username]);
-//                     session(['role' => $user->role]);
-                    
-//                     if ($user->role == 1) 
-//                         {
-//                             return view('admin.index');
-//                         } 
-//                     else if ($user->role == 2)
-//                         {
-//                             return view('admin.index');
-//                         }
-//                     else 
-//                         {
-//                             return view('admin.user');
-//                         }
-//                 } 
-//                 else 
-//                     {
-//                         return redirect()->back()->with('error', 'Sai mật khẩu!');
-//                     }
-//             } 
-
-//         else 
-//             {
-//                 // Nếu không có người dùng, hiển thị thông báo lỗi
-//                 return redirect()->back()->with('error', 'Chưa đăng ký tài khoản!');
-//             }
-//     }
-    
-    function signup()
-    {
-        return view('signup');
-    }
-
-    function logout()
+function logout()
     {
         Session::flush(); 
         return redirect()->route('login'); 
     }
 
-    function setting()
+function setting()
     {
         $signin = DB::table("login")->whereRaw("phone=?",[Auth::user()->phone])->first();
         $info = DB::table("admin")->whereRaw("phone=?", $signin->phone)->first();
+
+        // $signin = DB::table("login")->whereRaw("phone=?",[Auth::user()->phone])->first();
+        // $info = DB::table("customer")->whereRaw("phone=?", $signin->phone)->first();
+        
+        // $user = User::with(['login', 'customer'])->where('phone', Auth::user()->phone)->first();
     
         return view("admin.settingacc", compact("info"));
     }
 
-    function saveinfo(Request $request)
+function saveinfo(Request $request)
     {
         $request->validate([
             'username' => ['required', 'string', 'max:255'],

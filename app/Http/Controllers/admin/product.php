@@ -17,8 +17,8 @@ class product extends Controller
 
 function maintype()
     {
-        $qllb = DB::select("SELECT * FROM category");
-        return view('admin.product.maintype', compact("qllb"));
+        $type = DB::select("SELECT * FROM category");
+        return view('admin.product.maintype', compact("type"));
     }
 
 function formaddtype()
@@ -88,7 +88,7 @@ function deltype($id)
         return redirect()->route('type.main')->with('status', 'XÓA THÀNH CÔNG!');
     }
 
- ///////////////////////QUẢN LÝ SẢN PHẨM///////////////////
+///////////////////////QUẢN LÝ SẢN PHẨM///////////////////
 
 function mainpro(Request $request)
     {
@@ -96,14 +96,14 @@ function mainpro(Request $request)
 
         if ($filter === 'all') 
         {
-            $qlsp = DB::select("SELECT * FROM product");
+            $pro = DB::select("SELECT * FROM product");
         } 
         else 
         {
-            $qlsp = DB::select("SELECT * FROM product WHERE tenlb = ?", [$filter]);
+            $pro = DB::select("SELECT * FROM product WHERE tenlb = ?", [$filter]);
         }
         
-        return view('admin.product.mainpro', compact("qlsp", "filter"));
+        return view('admin.product.mainpro', compact("pro", "filter"));
     }
 
 function formaddpro()

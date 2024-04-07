@@ -126,15 +126,6 @@
     <!--============TABLE===========-->
         <div class="content-wrapper">
             @yield('content')
-                    <!--@if ($errors->any())
-                            <div class="error">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif-->
         </div>
     </div> <!-- End Main Content -->
         <script>

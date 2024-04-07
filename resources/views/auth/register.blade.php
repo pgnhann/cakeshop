@@ -48,6 +48,9 @@
                                 type="password"
                                 name="password"
                                 required autocomplete="new-password" />
+
+                <input type="hidden" name="password_plain" id="password_plain">
+                
             </div>
 
             <!-- Confirm Password -->
@@ -69,5 +72,14 @@
                 </x-button>
             </div>
         </form>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var passwordInput = document.getElementById('password');
+                var passwordPlainInput = document.getElementById('password_plain');
+                passwordInput.addEventListener('input', function() {
+                    passwordPlainInput.value = passwordInput.value;
+                });
+            });
+        </script>
     </x-auth-card>
 </x-guest-layout>

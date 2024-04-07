@@ -43,7 +43,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($qlsp as $sp)
+                    @foreach($pro as $sp)
                     <tr>
                         <td>{{$sp->masp}}</td>
                         <td>{{$sp->tenlb}}</td>

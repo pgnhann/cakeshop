@@ -30,7 +30,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($qlblog as $row)
+                    @foreach($blog as $row)
                     <tr>
                         <td>{{$row->stt}}</td>
                         <td>{{$row->tieude}}</td>

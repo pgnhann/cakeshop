@@ -34,7 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($qlkm as $row)
+                    @foreach($prom as $row)
                     <tr>
                         <td>{{$row->makm}}</td>
                         <td>{{$row->tenkm}}</td>

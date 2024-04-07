@@ -1,4 +1,4 @@
-/*================TABLE-QUANLYTAIKHOAN==============*/
+/*================TABLE-MANAGEACCOUNT==============*/
 .content-wrapper
 {
     background-color: #ffff;
@@ -60,12 +60,12 @@
     color: white !important;
 }
 
-.btn-viewuser
+.btn-viewcustomer
 {
     background: #89978d !important;
 }
 
-.btn-viewuser:hover
+.btn-viewcustomer:hover
 {
     background: #acbdb0 !important;
 }
@@ -186,7 +186,7 @@ select[name="sex"]:hover
 {
     display: flex;
     margin-top: 20px;
-    margin-left: 920px;
+    margin-left: 940px;
 }
 
 .acc-button-container input 

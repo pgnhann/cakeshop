@@ -8,7 +8,7 @@
         <h5> CẬP NHẬT THÔNG TIN NHÂN VIÊN </h5>
         <span>
             <a href ="{{ route ('account.main') }}">
-                <button class = "btn btn-viewuser"> <i class="fa-solid fa-rotate-left"></i></button>
+                <button class = "btn btn-viewcustomer"> <i class="fa-solid fa-rotate-left"></i></button>
             </a>
         </span>
     </div>
@@ -28,9 +28,11 @@
                 <tr>
                     <td class="label-updatenv"> <b>Mật khẩu:</b></td> 
                     <td>
-                        <input type="text" name="pass" value="********">
+                        <input type="text" name="newpass" value="{{$staff->password_plain}}">
                     </td>
                 <tr>
+                
+                <input type ='hidden' value='{{$staff->password}}' name='passold_hash'>
 
                 <tr>
                     <td class="label-updatenv"> <b>Mã chi nhánh:</b></td> 
