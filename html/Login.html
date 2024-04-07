@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Atelier Cake</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid top-bar bg-dark text-light px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 align-items-center d-none d-lg-flex">
+            <div class="col-lg-6 px-5 text-start">
+                    <small>Theo dõi Atelier Cake tại:</small>
+                    <div class="h-100 d-inline-flex align-items-center">
+                        <a class="btn-lg-square text-green border-end rounded-0 " href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn-lg-square text-green pe-0" href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    </div>
+            </div>
+            <div class="col-lg-6 px-5 text-end">
+                <div class="ps-3 h-auto margin-right">
+                    <a class="d-inline-flex"><i class="fa fa-phone text-green"></i></a>
+                    <small class="text-green mb-0">Liên hệ chúng tôi:</small>
+                    <a class="text-light">0905.666.888</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="text-green m-0">Atelier Cake</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link ">Trang Chủ</a>
+                <a href="Promotion.html" class="nav-item nav-link">Khuyến mãi</a>
+                <a href="about.html" class="nav-item nav-link">Giới thiệu</a>
+                <a href="blog.html" class="nav-item nav-link">Blog</a>
+                <div class="nav-item dropdown">
+                    <a href="product.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sản phẩm</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="Entremet.html" class="dropdown-item">Bánh Entremet</a>
+                        <a href="Tiramisu.html" class="dropdown-item">Bánh Tiramisu</a>
+                        <a href="Kem.html" class="dropdown-item">Bánh kem</a>
+                        <a href="ngot.html" class="dropdown-item">Bánh ngọt</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center">
+                <a class="btn-lg-square text-green border-end rounded-0 pe-0 " href="Cart.html"><i class="fa fa-cart-plus"></i></a>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center">
+            <a href="#!" class=" btn-login-square H-100 d-inline-flex btn btn-green btn-rounded text-uppercase font-weight-bold" 
+            href="Dang-nhap.html">Đăng nhập</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center pt-5 pb-3">
+            <h1 class="display-4 text-white animated slideInDown mb-3">Đăng nhập</h1>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Login Start -->
+    <div class="wrapCont">
+        <div class="wrapper">
+          <script src="https://apis.google.com/js/api:client.js" gapi_processed="true"></script>
+      <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+      <script language="javascript">
+        function checkform(f) {
+          var re =/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5})$/gi;
+          var email = f.email.value;
+          if (email == '') {
+            alert("Vui lòng nhập email");
+            f.email.focus();
+            return false;
+          }
+          if (email != '' && email.match(re)==null)   {
+            alert("Email không hợp lệ");
+            f.email.focus();
+            return false;
+          }
+          if (f.password.value == '') {
+            alert("Vui lòng nhập mật khẩu");
+            f.password.focus();
+            return false;
+          }
+          return true;
+        }
+        $(document).ready(function () {
+          $("#login_email").focus();
+        });
+      </script>
+      <div class="menuTab vc"><ul><li class="current"><a href="Login.html">Đăng Nhập</a></li><li><a href="SignUp.html">Đăng ký</a></li></ul></div>
+      <div class="wrapAccount">
+        <div class="formAccount">
+          <form id="fLogin" name="fLogin" method="post" action="Login.html" onsubmit="return checkform(this)">
+            <div class="form-group">
+              <label for="email">Email đăng nhập <span class="color">*</span></label>
+              <div class="formFa fa-lock">
+                <input type="text" name="email" id="email" class="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Mật khẩu <span class="color">*</span></label>
+              <div class="formFa fa-key">
+                <input type="password" name="password" id="password" class="form-control required" autocomplete="off">
+              </div>
+            </div>
+            <div class="checkbox">
+              <label for="ch_remember">
+                <input type="checkbox" name="ch_remember" id="ch_remember" value="1" checked="checked">Ghi nhớ đăng nhập | 
+                <a href="#!" class="ll">Bạn quên mật khẩu?</a>
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="hidden" name="do_login" value="1">
+              <input type="hidden" name="ref" id="ref" value="aHR0cHM6Ly9zYXZvdXJlYmFrZXJ5LmNvbS9tZW1iZXIuaHRtbA">
+              <button id="btnLogin" name="btnLogin" type="submit" value="1">
+                <span>Đăng nhập</span>
+              </button>
+            </div>
+            <div class="form-group">
+              <a href="SignUp.html" class="btnRegis"><span>Bạn chưa có tài khoản? Hãy đăng ký miễn phí</span></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="wrapSocial">
+        <div class="formSocial">
+          <div class="txt">Hoặc đăng nhập bằng </div>
+          <div class="soc"><a href="javascript:void(0);" class="facebookLogin fa-facebook"><span>Facebook</span></a></div>
+          <div class="soc"><a href="javascript:void(0);" class="googleLogin fa-google"><span>Google</span></a></div>
+        </div>
+      </div>
+        </div>
+      </div>
+    <!-- Login End -->
+
+    <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer my-6 mb-0 py-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">Thông tin liên hệ</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>CN1: 244 Pasteur, phường 6, quận 3, TP.HCM</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>CN2: 18 Thảo Điền, phường Thảo Điền, TP. Thủ Đức, TP.HCM</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0905.666.888</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>Atelier.cake@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">CÔNG TY CỔ PHẦN BÁNH NGỌT ATELIER CAKE</h4>
+                        <p>Địa chỉ tên miền: AtelierCake.vn
+                        <br>Tên Doanh nghiệp: Công ty Cổ phần Bánh ngọt Atelier Cake
+                        <br>MST/ĐKKD/QLTL: 0104802706
+                        <br>Trụ sở Doanh Nghiệp:Số 244 Pasteur, phường 6, quận 3, TP.HCM
+                        <br>Quốc gia: Việt Nam
+                        <br>Điện thoại: 0905.666.888
+                        <br>Ngày cấp: 21/04/2023
+                        <br>Nơi cấp: Sở Kế hoạch và Đầu tư Tp. Hồ Chí Minh</p>
+                        <img class="img-fluid" src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/42008041469/original/Mo9gDy2XMZLppkUw4sWCsYV-lk65HqqgQw.gif?1539077990" alt="">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+    
+    
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">AtelierCake</a>, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-green btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
