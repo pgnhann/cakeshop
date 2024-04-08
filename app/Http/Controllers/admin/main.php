@@ -69,6 +69,6 @@ function saveinfo(Request $request)
             DB::table("admin")->where("phone", $datalogin["phone"])->update($dataadmin);
         });
 
-        return redirect()->route('account.main')->with('status', 'CẬP NHẬT THÀNH CÔNG!');
+        return redirect()->route('admin.setting')->with('status', 'LƯU THÀNH CÔNG!');
     }
 }

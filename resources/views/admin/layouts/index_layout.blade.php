@@ -46,6 +46,15 @@
                         </a>
                     </li>
                 @endif
+
+                @if(session('role') == 2)
+                    <li>
+                        <a href ="{{ route ('account.customer') }}">
+                            <i class="fas fa-users"></i>
+                            <span> Khách hàng </span>
+                        </a>
+                    </li>
+                @endif
                 
                 <li>
                     <a href ="{{ route ('type.main') }}">

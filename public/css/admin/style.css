@@ -244,5 +244,6 @@ a
 }
 .form-control
 {
-    font-size: 17px !important;
+    font-size: 17px;
+    margin-bottom: 10px !important;
 }

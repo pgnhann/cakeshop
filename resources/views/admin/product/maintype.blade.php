@@ -12,11 +12,13 @@
     <div class="card">
         <div class = "card-header">
             <h5> QUẢN LÝ LOẠI BÁNH </h5>
+            @if(session('role') == 1)
             <span>
                 <a href ="{{ route ('type.add') }}">
                     <button class = "btn btn-add" > <i class="fa-solid fa-plus"></i> </button>
                 </a>
             </span>
+            @endif
         </div>
 
         <div class="card-body">
@@ -28,7 +30,9 @@
                         <th>Giới thiệu</th>
                         <th>Phụ kiện tặng kèm</th>
                         <th>Hướng dẫn bảo quản</th>
+                        @if(session('role') == 1)
                         <th style = "border-right: none !important;">Thao tác</th>
+                        @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -39,6 +43,7 @@
                         <td style ="text-align: justify", width = "400px">{{$row->gioithieu}}</td>
                         <td class="wrap-after-dot">{{$row->phukien}}</td>
                         <td class="wrap-after-dot", width = "250px">{{$row->baoquan}}</td>
+                        @if(session('role') == 1)
                         <td style = "border-right: none !important;">
                             <a href="{{ url('/quanly/loaibanh/update/'. $row->malb)}}">
                                 <button class = "btn btn-update"> <i class="fa-solid fa-pen"></i> </button> 
@@ -48,6 +53,7 @@
                                 <button type="submit" class="btn btn-delete" onclick="return confirm('Bạn có chắc chắn muốn xóa loại bánh này?')"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>

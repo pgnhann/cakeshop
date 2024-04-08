@@ -1,7 +1,6 @@
 <!-- Modal -->
 <form action="{{ url('/quanly/nhvien/capquyen/'.$row->phone) }}" method="post" enctype="multipart/form-data">
 {{ csrf_field() }}
-
   <div class="modal fade" id="ModalGiveRole{{$row->phone}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">

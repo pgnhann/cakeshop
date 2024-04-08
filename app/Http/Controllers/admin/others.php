@@ -17,14 +17,14 @@ class others extends Controller
 
     function mainprom()
         {
-            $prom = DB::select("SELECT * FROM voucher");
+            $prom = DB::select("SELECT * FROM promotion");
             return view('admin.others.mainprom',compact("prom"));
         }
     
     function formaddprom()
         {
-            $latestPromotion = DB::table('voucher')->orderBy('makm', 'desc')->first();
-            $nextPromotionNumber = $latestPromotion ? intval(substr($latestPromotion->makm, 2)) + 1 : 1;
+            $latestPromotion = DB::table('promotion')->orderBy('Prm_Id', 'desc')->first();
+            $nextPromotionNumber = $latestPromotion ? intval(substr($latestPromotion->Prm_Id, 2)) + 1 : 1;
             $nextPromotionID = "KM" . str_pad($nextPromotionNumber, 2, "0", STR_PAD_LEFT);
 
             return view('admin.others.addprom', compact("nextPromotionID"));
@@ -41,24 +41,24 @@ class others extends Controller
             $status = $request->input('statusprom');
 
             $data = [
-                'makm' => $id,
-                'tenkm' => $name,
-                'mota' => $descr,
+                'Prm_Id' => $id,
+                'Prm_Name' => $name,
+                'Prm_Desc' => $descr,
                 'dieukien' => $condition,
-                'ngaybd' => $start,
-                'ngaykt' => $end,
-                'trangthai' => $status,
+                'Prm_StDate' => $start,
+                'Prm_EnDate' => $end,
+                'Prm_Status' => $status,
             ];
     
-            DB::table("voucher")->insert($data);
+            DB::table("promotion")->insert($data);
     
             return redirect()->route('promotion.main')->with('status', 'THÊM KHUYẾN MÃI THÀNH CÔNG!');   
         }
 
     function formupdateprom($id)
         {
-            $prom = DB::table('voucher')
-            ->where('makm', $id)
+            $prom = DB::table('promotion')
+            ->where('Prm_Id', $id)
             ->first();
             return view('admin.others.updateprom', compact('prom'));
         }
@@ -74,16 +74,16 @@ class others extends Controller
             $status = $request->input('statusprom');
             
             $data = [
-                'makm' => $id,
-                'tenkm' => $name,
-                'mota' => $descr,
+                'Prm_Id' => $id,
+                'Prm_Name' => $name,
+                'Prm_Desc' => $descr,
                 'dieukien' => $condition,
-                'ngaybd' => $start,
-                'ngaykt' => $end,
-                'trangthai' => $status,
+                'Prm_StDate' => $start,
+                'Prm_EnDate' => $end,
+                'Prm_Status' => $status,
             ];
     
-            DB::table("voucher")->where("makm", $data["makm"])->update($data);
+            DB::table("promotion")->where("Prm_Id", $data["Prm_Id"])->update($data);
     
             return redirect()->route('promotion.main')->with('status', 'CẬP NHẬT THÀNH CÔNG!');   
         }
@@ -91,7 +91,7 @@ class others extends Controller
     
     function delprom($id)
         {
-            DB::table("voucher")->where("makm", $id)->delete();
+            DB::table("promotion")->where("Prm_Id", $id)->delete();
 
             return redirect()->route('promotion.main')->with('status', 'XÓA THÀNH CÔNG!');   
         }

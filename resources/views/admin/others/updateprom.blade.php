@@ -14,28 +14,28 @@
     </div>
 
     <div class="card-body">
-        <form action="{{ url('/quanly/khuyenmai/updated/' . $prom->makm) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url('/quanly/khuyenmai/updated/' . $prom->Prm_Id) }}" method="post" enctype="multipart/form-data">
             @csrf
             <center>
             <table class="updateprom-table">
                 <tr>
                     <td class="label-updateprom"> <b>Mã khyến mãi:</b></td> 
                     <td>
-                        <input type="text" name="idprom" value="{{ $prom -> makm }}">
+                        <input type="text" name="idprom" value="{{ $prom -> Prm_Id }}">
                     </td>
                 </tr>
                 
                 <tr>
                     <td class="label-updateprom"> <b>Tên khuyến mãi:</b></td> 
                     <td>
-                        <input type="text" name="nameprom" value="{{ $prom-> tenkm }}">
+                        <input type="text" name="nameprom" value="{{ $prom-> Prm_Name }}">
                     </td>
                 </tr>
 
                 <tr>
                     <td class="label-updateprom"> <b>Mô tả:</b></td> 
                     <td>
-                        <textarea name="descrprom">{{$prom->mota}}</textarea>
+                        <textarea name="descrprom">{{$prom->Prm_Desc}}</textarea>
                     </td>
                 </tr>
 
@@ -50,7 +50,7 @@
                     <td class="label-updateprom"> <b>Ngày bắt đầu:</b></td> 
                     <td>
                         <input type="text" id="datestart" name="datestart" 
-                            value ="{{ $prom -> ngaybd }}" pattern="\d{4}-\d{2}-\d{2}">
+                            value ="{{ $prom -> Prm_StDate }}" pattern="\d{4}-\d{2}-\d{2}">
                         <script>
                             $(function() {
                                 $("#datestart").datepicker({
@@ -67,7 +67,7 @@
                     <td class="label-updateprom"> <b>Ngày kết thúc:</b></td> 
                     <td>
                         <input type="text" id="dateend" name="dateend" 
-                            value ="{{ $prom -> ngaykt }}" pattern="\d{4}-\d{2}-\d{2}">
+                            value ="{{ $prom -> Prm_EnDate }}" pattern="\d{4}-\d{2}-\d{2}">
                         <script>
                             $(function() {
                                 $("#dateend").datepicker({
@@ -84,11 +84,11 @@
                     <td class="label-updateprom"> <b>Trạng thái:</b></td> 
                     <td>
                         <select name="statusprom">
-                            @if($prom->trangthai == "Chưa bắt đầu")
+                            @if($prom->Prm_Status == "Chưa bắt đầu")
                                 <option value="Chưa bắt đầu" selected>Chưa bắt đầu</option>
                                 <option value="Đang diễn ra">Đang diễn ra</option>
                                 <option value="Kết thúc">Kết thúc</option>
-                            @elseif($prom->trangthai == "Đang diễn ra")
+                            @elseif($prom->Prm_Status == "Đang diễn ra")
                                 <option value="Chưa bắt đầu">Chưa bắt đầu</option>
                                 <option value="Đang diễn ra" selected>Đang diễn ra</option>
                                 <option value="Kết thúc">Kết thúc</option>

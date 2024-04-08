@@ -12,11 +12,13 @@
     <div class="card">
         <div class = "card-header">
             <h5> QUẢN LÝ KHUYẾN MÃI </h5>
+            @if(session('role') == 1)
             <span>
                 <a href ="{{ route ('promotion.add') }}">
                     <button class = "btn btn-add" > <i class="fa-solid fa-plus"></i> </button>
                 </a>
             </span>
+            @endif
         </div>
 
         <div class="card-body">
@@ -30,28 +32,32 @@
                         <th>Ngày bắt đầu</th>
                         <th>Ngày kết thúc</th>
                         <th>Trạng thái</th>
+                        @if(session('role') == 1)
                         <th style = "border-right: none !important;">Thao tác</th>
+                        @endif
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($prom as $row)
                     <tr>
-                        <td>{{$row->makm}}</td>
-                        <td>{{$row->tenkm}}</td>
-                        <td>{{$row->mota}}</td>
+                        <td>{{$row->Prm_Id}}</td>
+                        <td>{{$row->Prm_Name}}</td>
+                        <td>{{$row->Prm_Desc}}</td>
                         <td>{{$row->dieukien}}</td>
-                        <td>{{$row->ngaybd}}</td>
-                        <td>{{$row->ngaykt}}</td>
-                        <td>{{$row->trangthai}}</td>
+                        <td>{{$row->Prm_StDate}}</td>
+                        <td>{{$row->Prm_EnDate}}</td>
+                        <td>{{$row->Prm_Status}}</td>
+                        @if(session('role') == 1)
                         <td width = "120px" style = "border-right: none !important;">
-                            <a href="{{ url('/quanly/khuyenmai/update/'. $row->makm)}}">
+                            <a href="{{ url('/quanly/khuyenmai/update/'. $row->Prm_Id)}}">
                                 <button class = "btn btn-update"> <i class="fa-solid fa-pen"></i> </button> 
                             </a>
-                            <form action="{{ url('/quanly/khuyenmai/delete/'. $row->makm) }}" method="post" style="display: inline;">
+                            <form action="{{ url('/quanly/khuyenmai/delete/'. $row->Prm_Id) }}" method="post" style="display: inline;">
                                 @csrf @method('delete')
                                 <button type="submit" class="btn btn-delete" onclick="return confirm('Bạn có chắc chắn muốn xóa khuyến mãi này?')"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>

@@ -23,9 +23,11 @@
                     <li><a class="dropdown-item" href="{{ route('product.main', ['filter' => 'Entremet']) }}">Entremet</a></li>
                     <li><a class="dropdown-item" href="{{ route('product.main', ['filter' => 'Bánh ngọt']) }}">Bánh ngọt</a></li>
                 </ul>
+                @if(session('role') == 1)
                 <a href ="{{ route ('product.add') }}">
                     <button class = "btn btn-add" > <i class="fa-solid fa-plus"></i> </button>
                 </a>
+                @endif
             </div>
         </div>
 
@@ -39,7 +41,9 @@
                         <th> Nguyên liệu </th>
                         <th>Giá bán</th>
                         <th>Hình ảnh</th>
+                        @if(session('role') == 1)
                         <th style = "border-right: none !important;"> Thao tác </th>
+                        @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -51,6 +55,7 @@
                         <td>{{$sp->nglieu}}</td>
                         <td>{{$sp->giaban}}</td>
                         <td><img style="width: 120px; height: 120px;" src="{{ asset('storage/images/' . $sp->hinhanh) }}" alt="img"></td>
+                        @if(session('role') == 1)
                         <td style = "border-right: none !important;">
                             <a href="{{ url('/quanly/sanpham/update/'. $sp->masp)}}">
                                 <button class = "btn btn-update"> <i class="fa-solid fa-pen"></i> </button> 
@@ -60,6 +65,7 @@
                                 <button type="submit" class="btn btn-delete" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>
