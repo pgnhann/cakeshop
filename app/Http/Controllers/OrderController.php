@@ -45,17 +45,20 @@ class OrderController extends Controller
         if(isset($filters['Payment_Code'])){
             $query->where('Payment_Code',$filters['Payment_Code']);
         }
-        if(isset($filters['status'])){
-            $query->where('status',$filters['status']);
-        }
         if(isset($filters['React'])){
             $query->where('React',$filters['React']);
         }
-        if(isset($filters['Promote'])){
-            if($filters['Promote']="Yes"){
-                $query->whereNotNull('Prm_Id');
-            }
-            else $query->whereNull('Prm_Id');
+        if(isset($filters['Is_Paid'])){
+            $query->where('Is_Paid',$filters['Is_Paid']);
+        }
+        if(isset($filters['Is_Delivered'])){
+            $query->where('Is_Delivered',$filters['Is_Delivered']);
+        }
+        if(isset($filters['Recipient_Province_City'])){
+            $query->where('Recipient_Province_City',$filters['Recipient_Province_City']);
+        }
+        if(isset($filters['Recipient_District'])){
+            $query->where('Recipient_District',$filters['Recipient_District']);
         }
         $orders = $query->get();
         $detailed_orders = [];
