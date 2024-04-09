@@ -25,11 +25,9 @@
         <div class = "card-header">
             <h5> CÀI ĐẶT TÀI KHOẢN </h5>
             <span>
-                @if(session('role') == 1)
                 <a href ="{{ route ('account.main') }}"> 
                     <button class ="btn btn-viewcustomer"><i class="fa-solid fa-rotate-left"></i></button>
                 </a>
-                @endif
                 <a href ="{{ route ('admin.index') }}"> 
                     <button class ="btn btn-viewcustomer"><i class="fa-solid fa-rotate-left"></i></button>
                 </a>
@@ -93,9 +91,6 @@
                         <input type="text" class ="form-control" name="email" value="{{$info -> email}}">
                     </div>
                     <div class = "setting-button-container">
-                        @if(session('role') == 1)
-                            <input type='button' value='HỦY' class="cancel-button" onclick="window.location.href='http://127.0.0.1:8000/quanly/taikhoan'">
-                        @endif
                             <input type='button' value='HỦY' class="cancel-button" onclick="window.location.href='http://127.0.0.1:8000/quanly/trangchu'">
                             <input type='submit' value='LƯU' class="addstaff-button">
                     </div>
