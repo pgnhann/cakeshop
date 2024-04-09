@@ -63,7 +63,7 @@
                 </li>
 
                 <li>
-                    <a href ="http://127.0.0.1:8000/quanly/donhang">
+                    <a href ="{{ route ('order.main') }}">
                         <i class="fa-solid fa-list-ul"></i>
                         <span> Đơn hàng </span>
                     </a>
@@ -77,7 +77,7 @@
                 </li>
 
                 <li>
-                    <a href ="http://127.0.0.1:8000/quanly/gioithieu">
+                    <a href ="{{ route ('abus.main') }}">
                         <i class="fa-solid fa-circle-info"></i>
                         <span> Giới thiệu </span>
                     </a>

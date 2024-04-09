@@ -161,4 +161,62 @@ class others extends Controller
 
             return redirect()->route('blog.main')->with('status', 'XÓA THÀNH CÔNG!');   
         }
+
+    ///////////////////////QUẢN LÝ GIỚI THIỆU//////////////////
+        
+    function mainabus()
+        {
+            $abus = DB::select("SELECT * FROM aboutus");
+            return view('admin.others.mainabus',compact("abus"));
+        }
+
+    function formaddabus()
+        {
+            $latestAbus = DB::table('aboutus')->max('ID');
+            $nextAbusID = $latestAbus ? $latestAbus + 1 : 1;
+
+            return view('admin.others.addabus', compact("nextAbusID"));
+        }
+    
+    function addabus(Request $request)
+        {
+            $id = $request->input('id');
+            $title = $request->input('title');
+            $content = $request->input('content');
+
+            $data = [
+                'ID' => $id,
+                'Title' => $title,
+                'Content' => $content,
+            ];
+    
+            DB::table("aboutus")->insert($data);
+    
+            return redirect()->route('abus.main')->with('status', 'THÊM THÔNG TIN THÀNH CÔNG!');   
+
+        }
+    
+    function updateabus(Request $request)
+        {
+            $id = $request->input('id');
+            $title = $request->input('title');
+            $content = $request->input('content');
+            
+            $data = [
+                'ID' => $id,
+                'Title' => $title,
+                'Content' => $content,
+            ];
+    
+            DB::table("aboutus")->where("ID", $data["ID"])->update($data);
+    
+            return redirect()->route('abus.main')->with('status', 'CẬP NHẬT THÔNG TIN THÀNH CÔNG!');   
+        }
+    
+    function delabus($id)
+        {
+            DB::table("aboutus")->where("ID", $id)->delete();
+
+            return redirect()->route('abus.main')->with('status', 'XÓA THÀNH CÔNG!');   
+        }
 }

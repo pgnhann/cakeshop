@@ -301,3 +301,56 @@ select[name="statusprom"]:hover
 {
     margin-right: 10px; 
 }
+
+/*===================ADD-ABOUTUS================*/
+.addabus-table
+{
+    margin-top: 10px;
+    width: 80%;
+}
+
+.label-addabus
+{
+    width: 17%;
+    font-size: 17px;
+    padding-left: 50px;
+    padding-bottom: 5px;
+}
+.addabus-table input 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+}
+
+.addabus-table input[readonly]
+{
+    background: #f2f2f2fb;
+}
+
+.addabus-table input:hover 
+{
+    border-color: #395542;
+}
+
+.addabus-table textarea 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 350px; 
+    color: black;
+    border: 1px solid #ccc;
+    padding-left: 10px; 
+    padding-top: 10px;
+    margin-bottom: 12px;
+}
+
+.addabus-blog textarea:hover
+{
+    border-color: #395542;
+}

@@ -96,7 +96,9 @@
                         @if(session('role') == 1)
                             <input type='button' value='HỦY' class="cancel-button" onclick="window.location.href='http://127.0.0.1:8000/quanly/taikhoan'">
                         @endif
+                        @if(session('role') == 2)
                             <input type='button' value='HỦY' class="cancel-button" onclick="window.location.href='http://127.0.0.1:8000/quanly/trangchu'">
+                        @endif
                             <input type='submit' value='LƯU' class="addstaff-button">
                     </div>
                     {{ csrf_field() }}

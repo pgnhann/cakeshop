@@ -80,11 +80,23 @@ Route::delete('/quanly/sanpham/delete/{id}','App\Http\Controllers\admin\product@
 Route::get('/quanly/donhang','App\Http\Controllers\admin\order@mainorder') ->name('order.main');
 Route::get('/quanly/donhang/chitiet','App\Http\Controllers\admin\order@mainorder') ->name('order.viewdetail');
 
-Route::get('/quanly/donhang/update/{id}','App\Http\Controllers\admin\order@formupdateorder');
-
 Route::post('/quanly/donhang/updated/{id}','App\Http\Controllers\admin\order@updateorder');
 
 Route::delete('/quanly/donhang/delete/{id}','App\Http\Controllers\admin\order@delorder');
+
+Route::get('/quanly/donhang/preexport','App\Http\Controllers\admin\order@preexport') ->name('order.preexport');
+Route::get('/quanly/donhang/export','App\Http\Controllers\admin\order@exportpdf') ->name('order.export');
+
+
+///QUẢN LÝ GIỚI THIỆU
+Route::get('/quanly/gioithieu','App\Http\Controllers\admin\others@mainabus')->name('abus.main');
+
+Route::get('/quanly/gioithieu/add','App\Http\Controllers\admin\others@formaddabus')->name('abus.add');
+Route::post('/quanly/gioithieu/added','App\Http\Controllers\admin\others@addabus')->name('abus.added');
+
+Route::post('/quanly/gioithieu/updated/{id}','App\Http\Controllers\admin\others@updateabus');
+
+Route::delete('/quanly/gioithieu/delete/{id}','App\Http\Controllers\admin\others@delabus');
 
 
 ///QUẢN LÝ KHUYẾN MÃI

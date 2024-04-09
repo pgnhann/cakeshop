@@ -71,7 +71,7 @@
                 </li>
 
                 <li>
-                    <a href ="http://127.0.0.1:8000/quanly/donhang">
+                    <a href ="{{ route ('order.main') }}">
                         <i class="fa-solid fa-list-ul"></i>
                         <span> Đơn hàng </span>
                     </a>
@@ -85,7 +85,7 @@
                 </li>
 
                 <li>
-                    <a href ="http://127.0.0.1:8000/quanly/gioithieu">
+                    <a href ="{{ route ('abus.main') }}">
                         <i class="fa-solid fa-circle-info"></i>
                         <span> Giới thiệu </span>
                     </a>
@@ -131,31 +131,11 @@
             </div>
         <!--============HEADER-END===========-->
 
-        <!-- ================BANNER============== 
-        <div style="width: 600px; height:" class ="banner">
-            <img src="{{asset('storage/images/banner.jpg')}}" alt="img">
-        </div> -->
-        
         <!--============TABLE===========-->
         <div>
                 @yield('content')
         </div>
     </div> <!-- End Main Content -->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        const menuItems = document.querySelectorAll('.menu li');
-
-        menuItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                menuItems.forEach(function(menuItem) {
-                    menuItem.classList.remove('active-menu');
-                });
-                this.classList.add('active-menu');
-            });
-        });
-    });
-    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {

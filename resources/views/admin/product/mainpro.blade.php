@@ -54,7 +54,7 @@
                         <td>{{$sp->tensp}}</td>
                         <td>{{$sp->nglieu}}</td>
                         <td>{{$sp->giaban}}</td>
-                        <td><img style="width: 120px; height: 120px;" src="{{ asset('storage/images/' . $sp->hinhanh) }}" alt="img"></td>
+                        <td><img style="width: 160px; height: 160px;" src="{{ asset('storage/images/' . $sp->hinhanh) }}" alt="img"></td>
                         @if(session('role') == 1)
                         <td style = "border-right: none !important;">
                             <a href="{{ url('/quanly/sanpham/update/'. $sp->masp)}}">
