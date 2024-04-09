@@ -13,10 +13,10 @@
         <div class = "card-header">
             <h5> QUẢN LÝ TÀI KHOẢN </h5>
             <span>
-                <a href ="{{ route ('account.add') }}">
+                <a href ="#">
                     <button class = "btn btn-add" > <i class="fa-solid fa-user-plus"></i> </button>
                 </a>
-                <a href ="{{ route ('account.customer') }}"> 
+                <a href ="#"> 
                     <button class ="btn btn-viewcustomer"> <i class="fa-solid fa-eye"></i> </button>
                 </a>
             </span>
@@ -51,10 +51,10 @@
                             <td style ="vertical-align: middle; border-right: none !important" >
                             @if($row->position !== 'Quản lý')
                                 <a class="btn btn-giverole" href="#" data-bs-toggle="modal" data-bs-target="#ModalGiveRole{{$row->phone}}">CẤP QUYỀN</a>
-                                <a href="{{ url('/quanly/nhvien/update/'. $row->phone)}}">
+                                <a href="#">
                                     <button class = "btn btn-update"> <i class="fa-solid fa-pen"></i></button> 
                                 </a>
-                                <form action="{{ url('/quanly/nhvien/delete/'. $row->phone) }}" method="post" style="display: inline;">
+                                <form action="#" method="post" style="display: inline;">
                                     @csrf @method('delete')
                                     <button type="submit" class="btn btn-delete" onclick="return confirm('Bạn có chắc chắn muốn xóa tài khoản này?')"><i class="fa-solid fa-trash"></i></button>
                                 </form>      

@@ -38,23 +38,12 @@
                         <span> Trang chủ </span>
                     </a>
                 </li>
-                @if(session('role') == 1)
                     <li>
                         <a href ="{{ route ('account.main') }}">
                             <i class="fas fa-users"></i>
                             <span> Tài khoản </span>
                         </a>
                     </li>
-                @endif
-
-                @if(session('role') == 2)
-                    <li>
-                        <a href ="{{ route ('account.customer') }}">
-                            <i class="fas fa-users"></i>
-                            <span> Khách hàng </span>
-                        </a>
-                    </li>
-                @endif
                 
                 <li>
                     <a href ="{{ route ('type.main') }}">
