@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/filter', function () {
+    return view('test_filter');
+});
 // Route::get("/vidu1","App\Http\Controllers\ViDuController@vidu");
 // Route::get("/qlsach/theloai","App\Http\Controllers\BookController@laythongtintheloai");
 // Route::get("/qlsach/thongtinsach","App\Http\Controllers\BookController@laythongtinsach");

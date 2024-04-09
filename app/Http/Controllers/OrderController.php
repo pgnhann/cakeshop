@@ -95,8 +95,8 @@ class OrderController extends Controller
         if(isset($filters['status'])){
             $query->where('status',$filters['status']);
         }
-        if(isset($filters['React'])){
-            $query->where('React',$filters['React']);
+        if(isset($filters['Recipient_District'])){
+            $query->where('Recipient_District',$filters['Recipient_District']);
         }
         if(isset($filters['Promote'])){
             if($filters['Promote']="Yes"){
