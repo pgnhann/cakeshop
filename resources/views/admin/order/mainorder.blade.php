@@ -21,11 +21,8 @@
                     <li><a class="dropdown-item" href="{{ route('order.main', ['filter' => 'Chưa thanh toán']) }}">Chưa thanh toán</a></li>
                     <li><a class="dropdown-item" href="{{ route('order.main', ['filter' => 'Đã thanh toán']) }}">Đã thanh toán</a></li>
                     <li><a class="dropdown-item" href="{{ route('order.main', ['filter' => 'Thành công']) }}">Thành công</a></li>
-                    <!-- <li><a class="dropdown-item" href="{{ route('order.main', ['filter' => 'Tiramisu']) }}">Tiramisu</a></li>
-                    <li><a class="dropdown-item" href="{{ route('order.main', ['filter' => 'Entremet']) }}">Entremet</a></li>
-                    <li><a class="dropdown-item" href="{{ route('order.main', ['filter' => 'Bánh ngọt']) }}">Bánh ngọt</a></li> -->
                 </ul>
-                <a href ="#">
+                <a href ="{{ route ('order.preexport') }}">
                     <button class = "btn btn-add" > <i class="fa-solid fa-file-export"></i> </button>
                 </a>
             </div>

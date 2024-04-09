@@ -10,36 +10,38 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Storage;
 
+use PDF;
+
 class order extends Controller
 {
 
     function mainorder(Request $request)
-        {
-            $filter = $request->input('filter');
-            
-            $query = "SELECT o.Order_Id, o.Cus_Phone, o.Cus_Name, o.Recipient_Name, o.Recipient_Phone, o.Recipient_Email, 
+    {
+        $filter = $request->input('filter');
+        
+        $query = "SELECT o.Order_Id, o.Cus_Phone, o.Cus_Name, o.Recipient_Name, o.Recipient_Phone, o.Recipient_Email, 
                             CONCAT_WS(', ', o.Recipient_Address, o.Recipient_Ward, o.Recipient_District, o.Recipient_Province_City) AS Recipient_AddressR, 
                             o.Staff_Id, o.Create_Date, o.Payment_Code, o.Note, o.Is_Paid, o.Is_Delivered, 
                             GROUP_CONCAT(od.Pd_Name SEPARATOR ', ') AS Product_Names,
-                            SUM(od.Quantity) AS Total_Quantity, 
+                            SUM(od.Quantity) AS Total_Quantity,
+                            MAX(CONCAT(od.Prm_Disc, ' (', od.Pd_Name, ')')) AS Pro_Discount,
                             SUM(od.AfterPrm_Total) AS Total_Money 
                     FROM `order` o 
                     JOIN order_detail od ON o.Order_Id = od.Order_Id";
 
-            if ($filter == 'Tất cả') { }
-            elseif ($filter == 'Chưa thanh toán') { $query .= " WHERE o.Is_Paid = 'Chưa thanh toán'"; }
-            elseif ($filter == 'Thành công') { $query .= " WHERE o.Is_Delivered = 'Thành công'"; } 
-            elseif ($filter == 'Đã thanh toán') { $query .= " WHERE o.Is_Paid = 'Đã thanh toán'"; }
+        if ($filter == 'Tất cả') { }
+        elseif ($filter == 'Chưa thanh toán') { $query .= " WHERE o.Is_Paid = 'Chưa thanh toán'"; }
+        elseif ($filter == 'Thành công') { $query .= " WHERE o.Is_Delivered = 'Thành công'"; } 
+        elseif ($filter == 'Đã thanh toán') { $query .= " WHERE o.Is_Paid = 'Đã thanh toán'"; }
 
-            $query .= " GROUP BY o.Order_Id, o.Cus_Phone, o.Cus_Name, o.Recipient_Name, o.Recipient_Phone, o.Recipient_Email, 
+        $query .= " GROUP BY o.Order_Id, o.Cus_Phone, o.Cus_Name, o.Recipient_Name, o.Recipient_Phone, o.Recipient_Email, 
                             o.Recipient_Address, o.Recipient_Ward, o.Recipient_District, o.Recipient_Province_City, o.Staff_Id, 
                             o.Create_Date, o.Payment_Code, o.Note, o.Is_Paid, o.Is_Delivered";
 
-            $order = DB::select($query);
+        $order = DB::select($query);
 
-            return view('admin.order.mainorder', compact("order"));
-        }
-
+        return view('admin.order.mainorder', compact("order"));
+    }
 
     function updateorder(Request $request)
         {
@@ -67,5 +69,63 @@ class order extends Controller
             DB::table("order")->where("Order_Id", $id)->delete();
 
             return redirect()->route('order.main')->with('status', 'XÓA THÀNH CÔNG!');
+        }
+
+    function preexport()
+        {
+
+            $o_data = DB::select("SELECT o.Order_Id, o.Cus_Phone, o.Cus_Name, o.Recipient_Name, o.Recipient_Phone, o.Recipient_Email, 
+                                    CONCAT_WS(', ', o.Recipient_Address, o.Recipient_Ward, o.Recipient_District, o.Recipient_Province_City) AS Recipient_AddressR, 
+                                    o.Staff_Id, o.Create_Date, o.Payment_Code, o.Note, o.Is_Paid, o.Is_Delivered,
+                                    SUM(od.AfterPrm_Total) AS Total_Money 
+                                    FROM `order` o 
+                                    JOIN order_detail od ON o.Order_Id = od.Order_Id 
+                                    GROUP BY o.Order_Id, o.Cus_Phone, o.Cus_Name, o.Recipient_Name, o.Recipient_Phone, o.Recipient_Email, 
+                                    o.Recipient_Address, o.Recipient_Ward, o.Recipient_District, o.Recipient_Province_City, o.Staff_Id, 
+                                    o.Create_Date, o.Payment_Code, o.Note, o.Is_Paid, o.Is_Delivered");
+
+            $od_data = DB::select("SELECT * FROM order_detail");
+
+            return view('admin.order.preexport', compact("o_data", "od_data"));
+        }
+
+        function exportpdf()
+        {
+            // Lấy dữ liệu từ database
+            $o_data = DB::select("SELECT o.Order_Id, o.Cus_Phone, o.Cus_Name, o.Recipient_Name, o.Recipient_Phone, o.Recipient_Email, 
+                                        CONCAT_WS(', ', o.Recipient_Address, o.Recipient_Ward, o.Recipient_District, o.Recipient_Province_City) AS Recipient_AddressR, 
+                                        o.Staff_Id, o.Create_Date, o.Payment_Code, o.Note, o.Is_Paid, o.Is_Delivered,
+                                        SUM(od.AfterPrm_Total) AS Total_Money 
+                                        FROM `order` o 
+                                        JOIN order_detail od ON o.Order_Id = od.Order_Id 
+                                        GROUP BY o.Order_Id, o.Cus_Phone, o.Cus_Name, o.Recipient_Name, o.Recipient_Phone, o.Recipient_Email, 
+                                        o.Recipient_Address, o.Recipient_Ward, o.Recipient_District, o.Recipient_Province_City, o.Staff_Id, 
+                                        o.Create_Date, o.Payment_Code, o.Note, o.Is_Paid, o.Is_Delivered");
+            
+            $od_data = DB::select("SELECT * FROM order_detail");
+            
+            // Load view và truyền dữ liệu
+            $pdf = PDF::loadView('admin.order.preexport', compact('o_data', 'od_data'));
+
+            // Thiết lập font Tiếng Việt cho TCPDF
+            $pdf->setOptions(['font_path' => base_path('resources/fonts/'), 'font_data' => [
+                'dejavusans' => [
+                    'R' => 'DejaVuSans.ttf',
+                    'useOTL' => 0xFF,
+                    'useKashida' => 75,
+                ]
+            ]]);
+
+            // Thiết lập ngôn ngữ cho TCPDF
+            $pdf->setOptions(['isHtml5ParserEnabled' => true]);
+            $pdf->setOptions(['isPhpEnabled' => true]);
+            $pdf->setOptions(['isRemoteEnabled' => true]);
+            $pdf->setOptions(['language' => 'vi']); // Thiết lập ngôn ngữ Tiếng Việt cho TCPDF
+
+            // Thiết lập kích thước giấy A4 và hướng (portrait là dọc)
+            $pdf->setPaper('a4', 'portrait');
+
+            // Xuất tệp PDF
+            return $pdf->download('listorder.pdf');
         }
 }

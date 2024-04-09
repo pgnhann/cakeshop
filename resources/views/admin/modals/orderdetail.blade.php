@@ -42,8 +42,8 @@
                               <input type="text" name="totalquan" class="form-control" width = "50px" value="{{$row->Total_Quantity}}" readonly>
                         </div>
                         <div class="form-group">
-                              <label style ="font-weight: bold;"> Mã khuyến mãi </label>
-                              <input type="text" name="totalquan" class="form-control" width = "50px" value="{{$row->Prm_Id}}" readonly>
+                              <label style ="font-weight: bold;"> Khuyến mãi </label>
+                              <input type="text" name="prmid" class="form-control" width = "50px" value="{{$row->Pro_Discount}}" readonly>
                         </div>
                   </div>
             </div>
