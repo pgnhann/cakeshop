@@ -35,3 +35,7 @@ Route::get("/khuyen-mai/insert", [
     Promotion2Controller::class,"insertdata"
 ]);
 
+
+Route::get("/pre_export","App\Http\Controllers\OrderExport@preexport");
+Route::get("/export","App\Http\Controllers\OrderExport@exportpdf")->name('export.pdf');
+
