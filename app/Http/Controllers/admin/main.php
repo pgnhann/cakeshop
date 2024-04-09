@@ -28,11 +28,6 @@ function setting()
     {
         $signin = DB::table("login")->whereRaw("phone=?",[Auth::user()->phone])->first();
         $info = DB::table("admin")->whereRaw("phone=?", $signin->phone)->first();
-
-        // $signin = DB::table("login")->whereRaw("phone=?",[Auth::user()->phone])->first();
-        // $info = DB::table("customer")->whereRaw("phone=?", $signin->phone)->first();
-        
-        // $user = User::with(['login', 'customer'])->where('phone', Auth::user()->phone)->first();
     
         return view("admin.settingacc", compact("info"));
     }
