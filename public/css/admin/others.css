@@ -1,0 +1,356 @@
+
+/*==============TABLE-ADD-PROMOTION============*/   
+.addprom-table
+{
+    margin-top: 10px;
+    width: 80%;
+}
+
+.label-addprom
+{
+    width: 20%;
+    font-size: 17px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+}
+
+.addprom-table input 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+}
+
+.addprom-table input[readonly]
+{
+    background: #f2f2f2fb;
+}
+
+.addprom-table input:hover 
+{
+    border-color: #395542;
+}
+
+.ui-datepicker-year {
+    font-size: 14px;
+    font-family: 'Quicksand';
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+select[name="statusprom"]
+{
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding-left: 6px;
+}
+
+select[name="statusprom"]:hover
+{
+    border-color: #395542;
+}
+
+.addprom-table textarea 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 120px; 
+    color: black;
+    border: 1px solid #ccc;
+    padding-left: 10px; 
+    padding-top: 10px;
+    margin-bottom: 12px;
+}
+
+.addprom-table textarea:hover
+{
+    border-color: #395542;
+}
+
+.prom-button-container 
+{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 940px;
+}
+
+.prom-button-container input 
+{
+    margin-right: 10px; 
+}
+
+/*==============UPDATE-PROMOTION==============*/
+.updateprom-table
+{
+    width: 80%;
+}
+
+.label-updateprom
+{
+    width: 20%;
+    font-size: 17px;
+    text-align: left; 
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+
+.updateprom-table input 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.updateprom-table input:hover
+{
+    border-color: #395542;
+}
+
+.updatestaff-button
+{
+    margin-top: 20px;
+    margin-left: 1150px;
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    background: #579b6d;
+    color: white;
+    font-size: 17px;
+    transition: all ease 0.3s;
+}
+.updatestaff-button:hover
+{
+    background: #6abe84;
+}
+
+.updateprom-table textarea 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 160px; 
+    color: black;
+    border: 1px solid #ccc;
+    padding-left: 10px; 
+    padding-top: 10px;
+    margin-bottom: 12px;
+}
+
+.updateprom-table textarea:hover
+{
+    border-color: #395542;
+}
+
+.promupdate-button-container 
+{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 850px;
+}
+
+.promupdate-button-container input 
+{
+    margin-right: 10px; 
+}
+
+/*===================ADD-BLOG================*/
+.addblog-table
+{
+    margin-top: 10px;
+    width: 80%;
+}
+
+.label-addblog
+{
+    width: 17%;
+    font-size: 17px;
+    padding-left: 50px;
+    padding-bottom: 5px;
+}
+.addblog-table input 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+}
+
+.addblog-table input[readonly]
+{
+    background: #f2f2f2fb;
+}
+
+.addblog-table input:hover 
+{
+    border-color: #395542;
+}
+
+.addblog-table textarea 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 350px; 
+    color: black;
+    border: 1px solid #ccc;
+    padding-left: 10px; 
+    padding-top: 10px;
+    margin-bottom: 12px;
+}
+
+.addprom-blog textarea:hover
+{
+    border-color: #395542;
+}
+
+/*=================UPDATE-BLOG===================*/
+.updateblog-table
+{
+    margin-top: 30px;
+    width: 80%;
+}
+
+.label-updateblog
+{
+    width: 17%;
+    font-size: 17px;
+    text-align: left; 
+    padding-left: 60px;
+    padding-bottom: 10px;
+}
+
+.updateblog-table input 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+
+.updateblog-table input:hover
+{
+    border-color: #395542;
+}
+
+.updatestaff-button
+{
+    margin-top: 20px;
+    margin-left: 1150px;
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    background: #579b6d;
+    color: white;
+    font-size: 17px;
+    transition: all ease 0.3s;
+}
+.updatestaff-button:hover
+{
+    background: #6abe84;
+}
+
+.updateblog-table textarea 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 400px; 
+    color: black;
+    border: 1px solid #ccc;
+    padding-left: 10px; 
+    padding-top: 10px;
+    margin-bottom: 12px;
+}
+
+.updateprom-table textarea:hover
+{
+    border-color: #395542;
+}
+
+.blogupdate-button-container 
+{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 960px;
+}
+
+.blogupdate-button-container input 
+{
+    margin-right: 10px; 
+}
+
+/*===================ADD-ABOUTUS================*/
+.addabus-table
+{
+    margin-top: 10px;
+    width: 80%;
+}
+
+.label-addabus
+{
+    width: 17%;
+    font-size: 17px;
+    padding-left: 50px;
+    padding-bottom: 5px;
+}
+.addabus-table input 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+}
+
+.addabus-table input[readonly]
+{
+    background: #f2f2f2fb;
+}
+
+.addabus-table input:hover 
+{
+    border-color: #395542;
+}
+
+.addabus-table textarea 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 350px; 
+    color: black;
+    border: 1px solid #ccc;
+    padding-left: 10px; 
+    padding-top: 10px;
+    margin-bottom: 12px;
+}
+
+.addabus-blog textarea:hover
+{
+    border-color: #395542;
+}

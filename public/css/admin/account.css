@@ -1,0 +1,302 @@
+/*================TABLE-MANAGEACCOUNT==============*/
+.content-wrapper
+{
+    background-color: #ffff;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-right: 1rem;
+}
+
+.card-header
+{
+    display: flex !important;
+    justify-content: space-between !important;
+    text-align: center !important;
+    background: #395542 !important;
+    padding: 15px !important;
+    color: white !important;
+    vertical-align: middle !important;
+}
+
+.card-header h5
+{
+    margin-top: 7px !important;
+    font-weight: bold !important;
+}
+
+.card-header p
+{
+    padding-top: 7px;
+    margin-bottom: 0 !important;
+}
+
+.table-striped tr,
+.table-striped th,
+.table-striped td
+{
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+.table-striped thead 
+{
+    text-align: center !important;
+    border-bottom: #395542 !important;
+}
+
+.table-striped thead th
+{
+    border-right: 1px solid #395542 !important;
+}
+
+.table-striped tbody td
+{
+    border-right: 1px solid #395542 !important;
+}
+
+.btn i
+{
+    color: white !important;
+}
+
+.btn-viewcustomer
+{
+    background: #89978d !important;
+}
+
+.btn-viewcustomer:hover
+{
+    background: #acbdb0 !important;
+}
+
+.btn-add
+{
+    background: #2d954e !important;
+    margin-right: 5px;
+}
+
+.btn-add:hover
+{
+    background: #36b75e !important;
+    margin-right: 5px;
+}
+
+.btn-giverole
+{
+    background: #308465 !important;
+    color: #fff !important;
+}
+
+.btn-giverole:hover
+{
+    background: #3ca27d !important;
+}
+
+.btn-update
+{
+    background: #305184 !important;
+    color: #fff !important;
+}
+
+.btn-update:hover
+{
+    background: #38619e !important;
+}
+
+.btn-delete
+{
+    background: #952d2d !important;
+}
+
+.btn-delete:hover
+{
+    background: #bf3939 !important;
+}
+
+label 
+{
+    margin-bottom: 5px;
+}
+.form-control[readonly]
+{
+    height: 50px;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+/*==============TABLE-ADD-ACCOUNT============*/ 
+
+.addstaff-table
+{
+    margin-top: 10px;
+    width: 80%;
+}
+
+.label-addstaff
+{
+    width: 17%;
+    font-size: 17px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.addstaff-table input 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.addstaff-table input:hover 
+{
+    border-color: #395542;
+}
+
+.ui-datepicker-year {
+    font-size: 14px;
+    font-family: 'Quicksand';
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+select[name="sex"]
+{
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+select[name="sex"]:hover
+{
+    border-color: #395542;
+}
+
+.acc-button-container 
+{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 940px;
+}
+
+.acc-button-container input 
+{
+    margin-right: 10px; 
+}
+
+.addstaff-button
+{
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    background: #579b6d;
+    color: white;
+    font-size: 17px;
+    transition: all ease 0.3s;
+}
+.addstaff-button:hover
+{
+    background: #6abe84;
+}
+
+.cancel-button
+{
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    background: #9b5757;
+    color: white;
+    font-size: 17px;
+    transition: all ease 0.3s;
+}
+.cancel-button:hover
+{
+    background: #be6a6a;
+}
+
+/*==============UPDATE-ACCOUNT==============*/
+
+.updatestaff-table
+{
+    margin-top: 10px;
+    width: 80%;
+}
+
+.label-updatenv
+{
+    width: 20%;
+    font-size: 17px;
+    padding-left: 40px;
+    padding-bottom: 17px;
+}
+
+.updatestaff-table input 
+{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.updatestaff-table input:hover
+{
+    border-color: #395542;
+}
+
+.updatestaff-button
+{
+    margin-top: 20px;
+    margin-left: 1150px;
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    background: #579b6d;
+    color: white;
+    font-size: 17px;
+    transition: all ease 0.3s;
+}
+.updatestaff-button:hover
+{
+    background: #6abe84;
+}
+
+select[name="posi"]
+{
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding-left: 6px;
+}
+
+select[name="posi"]:hover
+{
+    border-color: #395542;
+}
+
+.accupdate-button-container 
+{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 880px;
+}
+
+.accupdate-button-container input 
+{
+    margin-right: 10px; 
+}
